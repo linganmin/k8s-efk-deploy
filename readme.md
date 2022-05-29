@@ -4,6 +4,10 @@
 
 ## 存储使用 NFS 方案
 
-NFS 部署请自行搜索，网上方案很多。
+> NFS 部署请自行搜索，网上方案很多，此处不做过多赘述。
 
+### nsf-provisioner
 
+可以参考 K8S 官方方案，或者直接使用对应的 Helm Charts
+
+[kubernetes-sigs/nfs-subdir-external-provisioner](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/master/charts/nfs-subdir-external-provisioner)

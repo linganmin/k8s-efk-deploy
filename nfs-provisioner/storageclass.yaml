@@ -1,0 +1,8 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: nfs-client
+  namespace: logging # replace
+provisioner: k8s-sigs.io/nfs-subdir-external-provisioner # 必须使用 deployment's env PROVISIONER_NAME'
+parameters:
+  archiveOnDelete: "false"
