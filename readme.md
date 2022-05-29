@@ -16,3 +16,15 @@
 
 [Helm Charts](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/master/charts/nfs-subdir-external-provisioner)
 
+## Kibana
+
+Kibana 和 ElasticSeach 版本兼容请参考官方仓库：[https://github.com/elastic/kibana](https://github.com/elastic/kibana)
+
+### 部署
+
+我没有使用 Helm 部署，所以有两个资源文件建目录`kibana`
+
+如果你想使用 Helm 部署，可以直接使用官方 Charts。
+
+[Kibana Helm Chart](https://artifacthub.io/packages/helm/elasticsearch/kibana)
+
