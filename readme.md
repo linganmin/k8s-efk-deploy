@@ -16,7 +16,15 @@
 
 [Helm Charts](https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner/tree/master/charts/nfs-subdir-external-provisioner)
 
+## ElasticSearch 集群
+
+Elasticsearch 部署为有`Statefulset`(状态集)，因为它包含日志数据。我们还公开了 Fluentd 和 kibana 的服务端点以连接到它。多个副本使用无头服务相互连接。无头`svc`有助于`pod`的`DNS`域。
+
+`statefulset` 使用基于`nsf-provisioner`创建的`StorageClass`(参考上方nsf-provisioner)创建 PVC。如果您有 PVC 的自定义存储类，你可以修改`volumeClaimTemplates`的`storageClassName`参数来变动它。
+
 ## Kibana
+
+Kibana 部署为`Deployment`并连接到弹性搜索服务端点。
 
 Kibana 和 ElasticSeach 版本兼容请参考官方仓库：[https://github.com/elastic/kibana](https://github.com/elastic/kibana)
 
@@ -29,6 +37,8 @@ Kibana 和 ElasticSeach 版本兼容请参考官方仓库：[https://github.com/
 [Kibana Helm Chart](https://artifacthub.io/packages/helm/elasticsearch/kibana)
 
 ## Fluent
+
+Fluentd 部署为守护程序集，因为它需要从所有节点收集容器日志。它连接到 Elasticsearch 服务端点以转发日志。
 
 使用官方 Helm Charts 部署，对应目录下为自定义的 values
 
