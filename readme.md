@@ -28,3 +28,14 @@ Kibana 和 ElasticSeach 版本兼容请参考官方仓库：[https://github.com/
 
 [Kibana Helm Chart](https://artifacthub.io/packages/helm/elasticsearch/kibana)
 
+## Fluent
+
+使用官方 Helm Charts 部署，对应目录下为自定义的 values
+
+[Fluentd Helm Chart](https://artifacthub.io/packages/helm/fluent/fluentd)
+
+### 日志解析
+
+新版本的 K8S 默认使用`containerd`作为运行时，需要使用`cri`解析器，参考：[Use CRI parser for containerd/cri-o logs](https://github.com/fluent/fluentd-kubernetes-daemonset#use-cri-parser-for-containerdcri-o-logs)
+
+其他解析插件，可以阅读[官方文档](https://docs.fluentd.org/parser)
